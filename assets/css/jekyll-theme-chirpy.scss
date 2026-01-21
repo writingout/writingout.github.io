@@ -9,3 +9,76 @@
 ';
 
 /* append your custom style below */
+
+/* ==== 1) Selection + link interaction ==== */
+
+/* Text selection */
+::selection {
+  background: rgba(255, 80, 140, 0.35); /* change */
+  color: inherit;
+}
+::-moz-selection {
+  background: rgba(255, 80, 140, 0.35); /* change */
+  color: inherit;
+}
+
+/* Mobile tap highlight (iOS/Safari/Chrome) */
+a,
+button,
+input,
+textarea,
+select {
+  -webkit-tap-highlight-color: rgba(255, 80, 140, 0.25); /* change */
+}
+
+/* Keyboard focus ring (what shows when you "click around" or tab) */
+:focus-visible {
+  outline: 2px solid rgba(255, 80, 140, 0.9); /* change */
+  outline-offset: 3px;
+}
+
+/* Link colors + visited/hover */
+a {
+  color: #ff2f77; /* change */
+}
+a:visited {
+  color: #b0164a; /* change */
+}
+
+/* Keep tag pills from inheriting global link color (keep dark pink)*/
+a.post-tag,
+a.tag,
+.tag a,
+.post-tags a {
+  color: inherit !important;
+}
+
+/* ==== 2) Sidebar colors (light + dark) ==== */
+
+/* LIGHT MODE */
+html[data-mode='light'] #sidebar {
+  background: #f3f0e8; /* change */
+}
+html[data-mode='light'] #sidebar .site-title,
+html[data-mode='light'] #sidebar .site-subtitle,
+html[data-mode='light'] #sidebar a {
+  color: #1a1a1a; /* change */
+}
+
+/* DARK MODE */
+html[data-mode='dark'] #sidebar {
+  background: #111016; /* change */
+}
+html[data-mode='dark'] #sidebar .site-title,
+html[data-mode='dark'] #sidebar .site-subtitle,
+html[data-mode='dark'] #sidebar a {
+  color: #f2f2f2; /* change */
+}
+
+/* Optional: tint the sidebar separators/borders */
+html[data-mode='light'] #sidebar hr {
+  border-color: rgba(0, 0, 0, 0.12);
+}
+html[data-mode='dark'] #sidebar hr {
+  border-color: rgba(255, 255, 255, 0.14);
+}
