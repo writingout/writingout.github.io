@@ -276,3 +276,24 @@ html.dark #sidebar .sidebar-bottom svg * {
 #sidebar .sidebar-bottom button {
   filter: none !important;
 }
+
+/* ==== 4) CHOOSE WITH SOCIAL MED. ICONS TO SHOW (HIDE ALL OTHERS) ==== */
+
+/* Hide all sidebar-bottom icons */
+#sidebar .sidebar-bottom > * {
+  display: none !important;
+}
+
+/* Show ONLY the light/dark mode toggle */
+#sidebar #mode-toggle,
+#sidebar .mode-toggle,
+#sidebar button[aria-label*='mode'],
+#sidebar button[aria-label*='Mode'] {
+  display: inline-flex !important;
+}
+
+/* Keep it centered */
+#sidebar .sidebar-bottom {
+  justify-content: center !important;
+  align-items: center !important;
+}
