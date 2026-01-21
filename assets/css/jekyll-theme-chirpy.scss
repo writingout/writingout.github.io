@@ -99,65 +99,97 @@ html[data-mode] {
   outline: 0 !important;
   box-shadow: none !important;
 }
+/* ==== SIDEBAR COLORS - DESKTOP & MOBILE FRIENDLY ==== */
 
-/* ==== SIDEBAR COLORS - SIMPLIFIED APPROACH ==== */
+/* IMPORTANT: Mobile sidebar is often a different structure in Chirpy */
 
-/* Default/fallback sidebar background */
-#sidebar {
+/* 1. DEFAULT SIDEBAR (Both desktop left sidebar & mobile overlay) */
+#sidebar,
+#sidebar-panel {
   background: #9a8a78 !important;
   transition: background-color 0.3s ease;
 }
 
+/* Sidebar text colors */
 #sidebar .site-title,
 #sidebar .site-subtitle,
-#sidebar a {
+#sidebar a,
+#sidebar-panel .site-title,
+#sidebar-panel .site-subtitle,
+#sidebar-panel a {
   color: #ffffff !important;
   transition: color 0.3s ease;
 }
 
-/* Light mode sidebar (pink/brown color scheme) */
-html[data-mode='light'] #sidebar {
-  background: #9a8a78 !important; /* Your light mode sidebar color */
+/* 2. LIGHT MODE - DESKTOP & MOBILE */
+html[data-mode='light'] #sidebar,
+html[data-mode='light'] #sidebar-panel {
+  background: #9a8a78 !important; /* Your light brown/pink */
 }
 
 html[data-mode='light'] #sidebar .site-title,
 html[data-mode='light'] #sidebar .site-subtitle,
-html[data-mode='light'] #sidebar a {
+html[data-mode='light'] #sidebar a,
+html[data-mode='light'] #sidebar-panel .site-title,
+html[data-mode='light'] #sidebar-panel .site-subtitle,
+html[data-mode='light'] #sidebar-panel a {
   color: #ffffff !important;
 }
 
-/* Dark mode sidebar (completely different color) */
-html[data-mode='dark'] #sidebar {
-  background: #1a1a2e !important; /* Example: dark blue/navy */
+/* 3. DARK MODE - DESKTOP & MOBILE */
+html[data-mode='dark'] #sidebar,
+html[data-mode='dark'] #sidebar-panel {
+  background: #1a1a2e !important; /* Dark navy - change as needed */
 }
 
 html[data-mode='dark'] #sidebar .site-title,
 html[data-mode='dark'] #sidebar .site-subtitle,
-html[data-mode='dark'] #sidebar a {
+html[data-mode='dark'] #sidebar a,
+html[data-mode='dark'] #sidebar-panel .site-title,
+html[data-mode='dark'] #sidebar-panel .site-subtitle,
+html[data-mode='dark'] #sidebar-panel a {
   color: #e6e6e6 !important; /* Light gray text */
 }
 
-/* Optional: Sidebar link hover effects */
-#sidebar a:hover {
-  color: #ff2f77 !important;
+/* 4. MOBILE-SPECIFIC OVERRIDES (Chirpy often uses #sidebar-panel for mobile) */
+/* Mobile menu button (hamburger) - make it match too */
+#sidebar-trigger,
+#sidebar-trigger span {
+  color: #ffffff !important;
 }
 
-html[data-mode='dark'] #sidebar a:hover {
-  color: #64ffda !important; /* Different hover color for dark mode */
+html[data-mode='dark'] #sidebar-trigger,
+html[data-mode='dark'] #sidebar-trigger span {
+  color: #e6e6e6 !important;
 }
 
-/* ==== DEBUGGING: Add visible borders to check if rules apply ==== */
+/* 5. HOVER EFFECTS (desktop only since mobile doesn't hover) */
+@media (hover: hover) {
+  #sidebar a:hover,
+  #sidebar-panel a:hover {
+    color: #ff2f77 !important;
+  }
+
+  html[data-mode='dark'] #sidebar a:hover,
+  html[data-mode='dark'] #sidebar-panel a:hover {
+    color: #64ffda !important;
+  }
+}
+
+/* ==== DEBUG: Uncomment to see what's happening ==== */
 /*
-#sidebar {
-  border: 3px solid red !important;
+#sidebar, #sidebar-panel {
+  outline: 3px dashed red !important;
 }
 
-html[data-mode='light'] #sidebar {
-  border: 3px solid yellow !important;
+html[data-mode='light'] #sidebar,
+html[data-mode='light'] #sidebar-panel {
+  outline: 3px dashed yellow !important;
 }
 
-html[data-mode='dark'] #sidebar {
-  border: 3px solid cyan !important;
+html[data-mode='dark'] #sidebar,
+html[data-mode='dark'] #sidebar-panel {
+  outline: 3px dashed cyan !important;
 }
 */
 
