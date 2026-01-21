@@ -170,3 +170,27 @@ article h2 {
   font-family: 'Roboto Condensed', sans-serif !important;
   letter-spacing: 0.02em; /* optional, looks good with condensed fonts */
 }
+
+/* 1) Remove the dot */
+.sidebar-bottom > .icon-border {
+  display: none !important;
+}
+
+/* 2) Control the container layout */
+#sidebar .sidebar-bottom {
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 0.6rem !important;
+
+  flex-wrap: nowrap !important; /* best if you want one clean row */
+
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* 3) Prevent children from stretching/spacing weirdly */
+#sidebar .sidebar-bottom > a,
+#sidebar .sidebar-bottom > button {
+  flex: 0 0 auto !important;
+  margin: 0 !important;
+}
