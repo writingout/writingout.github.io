@@ -291,7 +291,7 @@ html.dark #sidebar .sidebar-bottom svg * {
   filter: none !important;
 }
 
-/* ==== 4) CHOOSE WITH SOCIAL MED. ICONS TO SHOW (HIDE ALL OTHERS) ==== */
+/* ==== 4) CHOOSE WITH SOCIAL MED. ICONS TO SHOW (HIDE ALL OTHERS), COLOR CORRECTLY ==== */
 
 /* Hide all sidebar-bottom icons */
 #sidebar .sidebar-bottom > * {
@@ -310,6 +310,58 @@ html.dark #sidebar .sidebar-bottom svg * {
 #sidebar .sidebar-bottom {
   justify-content: center !important;
   align-items: center !important;
+}
+
+/* Fix theme toggler/social media icon colors*/
+
+/* Target the theme toggle button specifically */
+#sidebar #mode-toggle,
+#sidebar .mode-toggle,
+#sidebar button[aria-label*='mode'],
+#sidebar button[aria-label*='Mode'],
+#sidebar .sidebar-bottom > button {
+  color: #aba7a7 !important; /* Force white text/emoji */
+}
+
+/* Target any text/emoji inside the toggle button */
+#sidebar #mode-toggle::before,
+#sidebar #mode-toggle::after,
+#sidebar #mode-toggle i,
+#sidebar #mode-toggle span,
+#sidebar .mode-toggle::before,
+#sidebar .mode-toggle::after,
+#sidebar .mode-toggle i,
+#sidebar .mode-toggle span {
+  color: #be347b !important;
+}
+
+/* Force SVG/icons inside toggle to be white */
+#sidebar #mode-toggle svg,
+#sidebar .mode-toggle svg,
+#sidebar button[aria-label*='mode'] svg,
+#sidebar button[aria-label*='Mode'] svg {
+  fill: #be347b !important;
+  stroke: #be347b !important;
+  color: #be347b !important;
+}
+
+/* Hover effect for toggle */
+#sidebar #mode-toggle:hover,
+#sidebar .mode-toggle:hover,
+#sidebar button[aria-label*='mode']:hover,
+#sidebar button[aria-label*='Mode']:hover {
+  color: #ff0090 !important; /* Hot pink on hover */
+}
+
+#sidebar #mode-toggle:hover i,
+#sidebar #mode-toggle:hover span,
+#sidebar #mode-toggle:hover::before,
+#sidebar #mode-toggle:hover::after,
+#sidebar .mode-toggle:hover i,
+#sidebar .mode-toggle:hover span,
+#sidebar .mode-toggle:hover::before,
+#sidebar .mode-toggle:hover::after {
+  color: #ff0090 !important;
 }
 
 /* ==== 5) MORE COSMETICS, CAN DO WITHOUT; CHANGING SIDEBAR TITLE SIZE, POST WIDTH, ETC ==== */
