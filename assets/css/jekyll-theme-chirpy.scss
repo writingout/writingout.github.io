@@ -100,108 +100,65 @@ html[data-mode] {
   box-shadow: none !important;
 }
 
-/* ==== SIDEBAR COLORS - NUCLEAR OPTION FOR MOBILE ==== */
+/* ==== 2) Sidebar colors - UNIVERSAL APPROACH ==== */
 
-/* 1. NUCLEAR APPROACH: Target every possible sidebar element */
-#sidebar,
-#sidebar-panel,
-.sidebar,
-.sidebar-panel,
-.panel-sidebar,
-aside.sidebar,
-aside[class*='sidebar'],
-div[class*='sidebar'],
-nav[class*='sidebar'],
-#mobile-sidebar,
-.mobile-sidebar,
-#offcanvas-sidebar,
-.offcanvas-sidebar,
-[role='complementary'],
-[data-sidebar] {
-  background: #9a8a78 !important;
-  transition: background-color 0.3s ease !important;
-}
-
-/* Text in all sidebars */
-#sidebar *,
-#sidebar-panel *,
-.sidebar *,
-.sidebar-panel *,
-.panel-sidebar *,
-aside.sidebar *,
-aside[class*='sidebar'] *,
-div[class*='sidebar'] *,
-nav[class*='sidebar'] * {
-  color: #ffffff !important;
-  transition: color 0.3s ease !important;
-}
-
-/* 2. LIGHT MODE - NUCLEAR */
-html[data-mode='light'] #sidebar,
-html[data-mode='light'] #sidebar-panel,
-html[data-mode='light'] .sidebar,
-html[data-mode='light'] .sidebar-panel,
-html[data-mode='light'] .panel-sidebar,
-html[data-mode='light'] aside.sidebar,
-html[data-mode='light'] aside[class*='sidebar'],
-html[data-mode='light'] div[class*='sidebar'],
-html[data-mode='light'] nav[class*='sidebar'],
-html[data-mode='light'] #mobile-sidebar,
-html[data-mode='light'] .mobile-sidebar,
-html[data-mode='light'] #offcanvas-sidebar,
-html[data-mode='light'] .offcanvas-sidebar,
-html[data-mode='light'] [role='complementary'],
-html[data-mode='light'] [data-sidebar] {
-  background: #9a8a78 !important;
-}
-
-/* 3. DARK MODE - NUCLEAR */
-html[data-mode='dark'] #sidebar,
-html[data-mode='dark'] #sidebar-panel,
-html[data-mode='dark'] .sidebar,
-html[data-mode='dark'] .sidebar-panel,
-html[data-mode='dark'] .panel-sidebar,
-html[data-mode='dark'] aside.sidebar,
-html[data-mode='dark'] aside[class*='sidebar'],
-html[data-mode='dark'] div[class*='sidebar'],
-html[data-mode='dark'] nav[class*='sidebar'],
-html[data-mode='dark'] #mobile-sidebar,
-html[data-mode='dark'] .mobile-sidebar,
-html[data-mode='dark'] #offcanvas-sidebar,
-html[data-mode='dark'] .offcanvas-sidebar,
-html[data-mode='dark'] [role='complementary'],
-html[data-mode='dark'] [data-sidebar] {
+// Default/fallback for when theme hasn't loaded */
+#sidebar {
   background: #1a1a2e !important;
 }
 
-html[data-mode='dark'] #sidebar *,
-html[data-mode='dark'] #sidebar-panel *,
-html[data-mode='dark'] .sidebar *,
-html[data-mode='dark'] .sidebar-panel *,
-html[data-mode='dark'] .panel-sidebar *,
-html[data-mode='dark'] aside.sidebar *,
-html[data-mode='dark'] aside[class*='sidebar'] *,
-html[data-mode='dark'] div[class*='sidebar'] *,
-html[data-mode='dark'] nav[class*='sidebar'] * {
-  color: #e6e6e6 !important;
-}
-
-/* 3. MOBILE HAMBURGER BUTTON */
-#sidebar-trigger,
-.toggle-sidebar,
-.menu-toggle,
-[aria-label*='menu'],
-[aria-label*='Menu'] {
+#sidebar .site-title,
+#sidebar .site-subtitle,
+#sidebar a {
   color: #ffffff !important;
 }
 
-html[data-mode='dark'] #sidebar-trigger,
-html[data-mode='dark'] .toggle-sidebar,
-html[data-mode='dark'] .menu-toggle,
-html[data-mode='dark'] [aria-label*='menu'],
-html[data-mode='dark'] [aria-label*='Menu'] {
-  color: #e6e6e6 !important;
+/* When ANY light theme indicator is present */
+[data-mode='light'] #sidebar,
+[data-theme='light'] #sidebar,
+.light #sidebar,
+body.light #sidebar,
+html.light #sidebar {
+  background: #1a1a2e !important;
 }
+
+/*756859*/
+
+// f3f0e8
+// a9537e
+[data-mode='light'] #sidebar .site-title,
+[data-mode='light'] #sidebar .site-subtitle,
+[data-mode='light'] #sidebar a,
+[data-theme='light'] #sidebar .site-title,
+[data-theme='light'] #sidebar .site-subtitle,
+[data-theme='light'] #sidebar a,
+.light #sidebar .site-title,
+.light #sidebar .site-subtitle,
+.light #sidebar a {
+  color: #ffffff !important;
+}
+
+/* When ANY dark theme indicator is present */
+[data-mode='dark'] #sidebar,
+[data-theme='dark'] #sidebar,
+.dark #sidebar,
+body.dark #sidebar,
+html.dark #sidebar {
+  background: #1a1a2e !important;
+}
+
+[data-mode='dark'] #sidebar .site-title,
+[data-mode='dark'] #sidebar .site-subtitle,
+[data-mode='dark'] #sidebar a,
+[data-theme='dark'] #sidebar .site-title,
+[data-theme='dark'] #sidebar .site-subtitle,
+[data-theme='dark'] #sidebar a,
+.dark #sidebar .site-title,
+.dark #sidebar .site-subtitle,
+.dark #sidebar a {
+  color: #fffdfd !important;
+}
+
 /* ==== 3) Change heading fonts ==== */
 
 /* ===============================
@@ -402,4 +359,26 @@ html.dark #sidebar .sidebar-bottom svg * {
   #post-list .card {
     width: min(100%, 500px) !important;
   }
+}
+
+/* Light mode: white ring */
+html:not(.dark):not([data-mode='dark']):not([data-theme='dark'])
+  #sidebar
+  .profile-wrapper
+  img,
+html:not(.dark):not([data-mode='dark']):not([data-theme='dark'])
+  #sidebar
+  .profile-wrapper
+  .avatar {
+  border-color: #ffffff !important;
+}
+
+/* Dark mode: black ring */
+html.dark #sidebar .profile-wrapper img,
+html[data-mode='dark'] #sidebar .profile-wrapper img,
+html[data-theme='dark'] #sidebar .profile-wrapper img,
+html.dark #sidebar .profile-wrapper .avatar,
+html[data-mode='dark'] #sidebar .profile-wrapper .avatar,
+html[data-theme='dark'] #sidebar .profile-wrapper .avatar {
+  border-color: #000000 !important;
 }
