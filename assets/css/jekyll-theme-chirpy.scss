@@ -203,3 +203,15 @@ article h2 {
   font-family: 'Roboto Condensed', sans-serif !important;
   letter-spacing: 0.02em; /* optional, looks good with condensed fonts */
 }
+
+/* Force light palette even if OS prefers dark */
+:root {
+  color-scheme: light;
+  --main-bg: #ffffff !important;
+  --mask-bg: #f1f1f1 !important;
+  --text-color: #34343c !important;
+  --text-muted-color: #757575 !important;
+  --heading-color: #2a2a2a !important;
+  --card-bg: #ffffff !important;
+  --sidebar-bg: #f3f0e8 !important;
+}
