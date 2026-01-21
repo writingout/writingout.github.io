@@ -22,15 +22,6 @@
   color: inherit;
 }
 
-/* Mobile tap highlight (iOS/Safari/Chrome) */
-a,
-button,
-input,
-textarea,
-select {
-  -webkit-tap-highlight-color: rgba(255, 80, 140, 0.25); /* change */
-}
-
 /* Keyboard focus ring (what shows when you "click around" or tab) */
 :focus-visible {
   outline: 2px solid rgba(255, 80, 140, 0.9); /* change */
@@ -51,6 +42,60 @@ a.tag,
 .tag a,
 .post-tags a {
   color: inherit !important;
+}
+
+/* Ensure tags show pink when hovered on, no standard blue outline*/
+
+/* Apply globally, or change html[data-mode] -> #tags if you want ONLY tags page */
+html[data-mode] {
+  /* Kill Bootstrap focus ring system */
+  --bs-focus-ring-width: 0px;
+  --bs-focus-ring-opacity: 0;
+  --bs-focus-ring-color: rgba(0, 0, 0, 0);
+
+  /* Kill Bootstrap button focus shadow */
+  --bs-btn-focus-box-shadow: none;
+
+  /* If something still derives shadows from rgb */
+  --bs-btn-focus-shadow-rgb: 0, 0, 0;
+
+  /* Optional: remove “primary” border/hover blue on outline buttons */
+  --bs-primary: #ff2f77;
+  --bs-primary-rgb: 255, 47, 119;
+}
+
+/* Catch-all for pills rendered as .btn/.badge/.tag links */
+#tags .btn,
+#tags .badge,
+#tags a,
+#main-wrapper .btn,
+#main-wrapper .badge,
+#main-wrapper a.post-tag,
+#main-wrapper a.tag,
+#main-wrapper .tag a {
+  outline: 0 !important;
+  box-shadow: none !important;
+  filter: none !important; /* sometimes rings are drawn via filter */
+}
+
+/* Your hover style (no blue border, no ring) */
+#tags .btn:hover,
+#tags .btn:focus,
+#tags .btn:focus-visible,
+#tags .badge:hover,
+#tags .badge:focus,
+#tags .badge:focus-visible,
+#tags a:hover,
+#tags a:focus,
+#tags a:focus-visible,
+#main-wrapper a.post-tag:hover,
+#main-wrapper a.post-tag:focus,
+#main-wrapper a.post-tag:focus-visible {
+  background-color: #ff2f77 !important;
+  border-color: #ff2f77 !important;
+  color: #fff !important;
+  outline: 0 !important;
+  box-shadow: none !important;
 }
 
 /* ==== 2) Sidebar colors (light + dark) ==== */
