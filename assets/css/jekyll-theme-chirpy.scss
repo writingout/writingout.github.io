@@ -98,32 +98,75 @@ html[data-mode] {
   box-shadow: none !important;
 }
 
-/* ==== 2) Sidebar colors (light + dark) ==== */
+/* ==== 2) Sidebar colors - UNIVERSAL APPROACH ==== */
 
-/* LIGHT MODE */
-html[data-mode='light'] #sidebar {
-  background: #f3f0e8; /* change */
-}
-html[data-mode='light'] #sidebar .site-title,
-html[data-mode='light'] #sidebar .site-subtitle,
-html[data-mode='light'] #sidebar a {
-  color: #1a1a1a; /* change */
+/* Default/fallback for when theme hasn't loaded */
+#sidebar {
+  background: #f3f0e8 !important;
 }
 
-/* DARK MODE */
-html[data-mode='dark'] #sidebar {
-  background: #111016; /* change */
-}
-html[data-mode='dark'] #sidebar .site-title,
-html[data-mode='dark'] #sidebar .site-subtitle,
-html[data-mode='dark'] #sidebar a {
-  color: #f2f2f2; /* change */
+#sidebar .site-title,
+#sidebar .site-subtitle,
+#sidebar a {
+  color: #1a1a1a !important;
 }
 
-/* Optional: tint the sidebar separators/borders */
-html[data-mode='light'] #sidebar hr {
-  border-color: rgba(0, 0, 0, 0.12);
+/* When ANY light theme indicator is present */
+[data-mode='light'] #sidebar,
+[data-theme='light'] #sidebar,
+.light #sidebar,
+body.light #sidebar,
+html.light #sidebar {
+  background: #f3f0e8 !important;
 }
-html[data-mode='dark'] #sidebar hr {
-  border-color: rgba(255, 255, 255, 0.14);
+
+[data-mode='light'] #sidebar .site-title,
+[data-mode='light'] #sidebar .site-subtitle,
+[data-mode='light'] #sidebar a,
+[data-theme='light'] #sidebar .site-title,
+[data-theme='light'] #sidebar .site-subtitle,
+[data-theme='light'] #sidebar a,
+.light #sidebar .site-title,
+.light #sidebar .site-subtitle,
+.light #sidebar a {
+  color: #1a1a1a !important;
+}
+
+/* When ANY dark theme indicator is present */
+[data-mode='dark'] #sidebar,
+[data-theme='dark'] #sidebar,
+.dark #sidebar,
+body.dark #sidebar,
+html.dark #sidebar {
+  background: #111016 !important;
+}
+
+[data-mode='dark'] #sidebar .site-title,
+[data-mode='dark'] #sidebar .site-subtitle,
+[data-mode='dark'] #sidebar a,
+[data-theme='dark'] #sidebar .site-title,
+[data-theme='dark'] #sidebar .site-subtitle,
+[data-theme='dark'] #sidebar a,
+.dark #sidebar .site-title,
+.dark #sidebar .site-subtitle,
+.dark #sidebar a {
+  color: #f2f2f2 !important;
+}
+
+/* ==== 3) Topbar colors ====  */
+@media (max-width: 768px) {
+  /* Default/Light theme */
+  #topbar,
+  #topbar-wrapper {
+    background-color: rgba(243, 240, 232, 0.95) !important;
+    opacity: 1 !important;
+  }
+
+  /* Dark theme override - ONLY when dark mode is explicitly set */
+  html[data-mode='dark'] #topbar,
+  html[data-mode='dark'] #topbar-wrapper,
+  body[data-theme='dark'] #topbar,
+  body[data-theme='dark'] #topbar-wrapper {
+    background-color: rgba(17, 16, 22, 0.95) !important;
+  }
 }
