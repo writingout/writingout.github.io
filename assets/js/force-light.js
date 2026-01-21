@@ -2,8 +2,11 @@
 /*NOTE: Also added the following script to _includes/head/custom.html for this to work:*/
 // <script src="/assets/js/force-light.js"></script>
 
+// THIS DOESNT WORK FOR SHIT IDK
+
 /* TO RE-ENABLE LIGHT MODE YOU MUST BOTH DELETE THIS FILE AND THAT SCRIPT FROM HEAD.HTML */
 
+/*
 (() => {
   const root = document.documentElement;
 
@@ -26,3 +29,4 @@
     if (root.getAttribute('data-mode') === 'dark') forceLight();
   }).observe(root, { attributes: true, attributeFilter: ['data-mode'] });
 })();
+*/
