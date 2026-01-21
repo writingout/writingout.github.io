@@ -1,3 +1,21 @@
+<script>
+  (function () {
+    const root = document.documentElement;
+
+    // Force light mode ASAP (before CSS paints)
+    root.setAttribute('data-mode', 'light');
+    root.setAttribute('data-theme', 'light');
+    root.classList.remove('dark');
+    root.classList.add('light');
+
+    try {
+      localStorage.setItem('data-mode', 'light');
+      localStorage.setItem('mode', 'light');
+      localStorage.setItem('data-theme', 'light');
+    } catch (e) {}
+  })();
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
