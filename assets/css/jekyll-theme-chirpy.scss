@@ -99,100 +99,109 @@ html[data-mode] {
   outline: 0 !important;
   box-shadow: none !important;
 }
-/* ==== SIDEBAR COLORS - DESKTOP & MOBILE FRIENDLY ==== */
 
-/* IMPORTANT: Mobile sidebar is often a different structure in Chirpy */
+/* ==== SIDEBAR COLORS - NUCLEAR OPTION FOR MOBILE ==== */
 
-/* 1. DEFAULT SIDEBAR (Both desktop left sidebar & mobile overlay) */
+/* 1. NUCLEAR APPROACH: Target every possible sidebar element */
 #sidebar,
-#sidebar-panel {
+#sidebar-panel,
+.sidebar,
+.sidebar-panel,
+.panel-sidebar,
+aside.sidebar,
+aside[class*='sidebar'],
+div[class*='sidebar'],
+nav[class*='sidebar'],
+#mobile-sidebar,
+.mobile-sidebar,
+#offcanvas-sidebar,
+.offcanvas-sidebar,
+[role='complementary'],
+[data-sidebar] {
   background: #9a8a78 !important;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease !important;
 }
 
-/* Sidebar text colors */
-#sidebar .site-title,
-#sidebar .site-subtitle,
-#sidebar a,
-#sidebar-panel .site-title,
-#sidebar-panel .site-subtitle,
-#sidebar-panel a {
+/* Text in all sidebars */
+#sidebar *,
+#sidebar-panel *,
+.sidebar *,
+.sidebar-panel *,
+.panel-sidebar *,
+aside.sidebar *,
+aside[class*='sidebar'] *,
+div[class*='sidebar'] *,
+nav[class*='sidebar'] * {
   color: #ffffff !important;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease !important;
 }
 
-/* 2. LIGHT MODE - DESKTOP & MOBILE */
+/* 2. LIGHT MODE - NUCLEAR */
 html[data-mode='light'] #sidebar,
-html[data-mode='light'] #sidebar-panel {
-  background: #9a8a78 !important; /* Your light brown/pink */
+html[data-mode='light'] #sidebar-panel,
+html[data-mode='light'] .sidebar,
+html[data-mode='light'] .sidebar-panel,
+html[data-mode='light'] .panel-sidebar,
+html[data-mode='light'] aside.sidebar,
+html[data-mode='light'] aside[class*='sidebar'],
+html[data-mode='light'] div[class*='sidebar'],
+html[data-mode='light'] nav[class*='sidebar'],
+html[data-mode='light'] #mobile-sidebar,
+html[data-mode='light'] .mobile-sidebar,
+html[data-mode='light'] #offcanvas-sidebar,
+html[data-mode='light'] .offcanvas-sidebar,
+html[data-mode='light'] [role='complementary'],
+html[data-mode='light'] [data-sidebar] {
+  background: #9a8a78 !important;
 }
 
-html[data-mode='light'] #sidebar .site-title,
-html[data-mode='light'] #sidebar .site-subtitle,
-html[data-mode='light'] #sidebar a,
-html[data-mode='light'] #sidebar-panel .site-title,
-html[data-mode='light'] #sidebar-panel .site-subtitle,
-html[data-mode='light'] #sidebar-panel a {
-  color: #ffffff !important;
-}
-
-/* 3. DARK MODE - DESKTOP & MOBILE */
+/* 3. DARK MODE - NUCLEAR */
 html[data-mode='dark'] #sidebar,
-html[data-mode='dark'] #sidebar-panel {
-  background: #1a1a2e !important; /* Dark navy - change as needed */
+html[data-mode='dark'] #sidebar-panel,
+html[data-mode='dark'] .sidebar,
+html[data-mode='dark'] .sidebar-panel,
+html[data-mode='dark'] .panel-sidebar,
+html[data-mode='dark'] aside.sidebar,
+html[data-mode='dark'] aside[class*='sidebar'],
+html[data-mode='dark'] div[class*='sidebar'],
+html[data-mode='dark'] nav[class*='sidebar'],
+html[data-mode='dark'] #mobile-sidebar,
+html[data-mode='dark'] .mobile-sidebar,
+html[data-mode='dark'] #offcanvas-sidebar,
+html[data-mode='dark'] .offcanvas-sidebar,
+html[data-mode='dark'] [role='complementary'],
+html[data-mode='dark'] [data-sidebar] {
+  background: #1a1a2e !important;
 }
 
-html[data-mode='dark'] #sidebar .site-title,
-html[data-mode='dark'] #sidebar .site-subtitle,
-html[data-mode='dark'] #sidebar a,
-html[data-mode='dark'] #sidebar-panel .site-title,
-html[data-mode='dark'] #sidebar-panel .site-subtitle,
-html[data-mode='dark'] #sidebar-panel a {
-  color: #e6e6e6 !important; /* Light gray text */
+html[data-mode='dark'] #sidebar *,
+html[data-mode='dark'] #sidebar-panel *,
+html[data-mode='dark'] .sidebar *,
+html[data-mode='dark'] .sidebar-panel *,
+html[data-mode='dark'] .panel-sidebar *,
+html[data-mode='dark'] aside.sidebar *,
+html[data-mode='dark'] aside[class*='sidebar'] *,
+html[data-mode='dark'] div[class*='sidebar'] *,
+html[data-mode='dark'] nav[class*='sidebar'] * {
+  color: #e6e6e6 !important;
 }
 
-/* 4. MOBILE-SPECIFIC OVERRIDES (Chirpy often uses #sidebar-panel for mobile) */
-/* Mobile menu button (hamburger) - make it match too */
+/* 3. MOBILE HAMBURGER BUTTON */
 #sidebar-trigger,
-#sidebar-trigger span {
+.toggle-sidebar,
+.menu-toggle,
+[aria-label*='menu'],
+[aria-label*='Menu'] {
   color: #ffffff !important;
 }
 
 html[data-mode='dark'] #sidebar-trigger,
-html[data-mode='dark'] #sidebar-trigger span {
+html[data-mode='dark'] .toggle-sidebar,
+html[data-mode='dark'] .menu-toggle,
+html[data-mode='dark'] [aria-label*='menu'],
+html[data-mode='dark'] [aria-label*='Menu'] {
   color: #e6e6e6 !important;
 }
-
-/* 5. HOVER EFFECTS (desktop only since mobile doesn't hover) */
-@media (hover: hover) {
-  #sidebar a:hover,
-  #sidebar-panel a:hover {
-    color: #ff2f77 !important;
-  }
-
-  html[data-mode='dark'] #sidebar a:hover,
-  html[data-mode='dark'] #sidebar-panel a:hover {
-    color: #64ffda !important;
-  }
-}
-
-/* ==== DEBUG: Uncomment to see what's happening ==== */
-/*
-#sidebar, #sidebar-panel {
-  outline: 3px dashed red !important;
-}
-
-html[data-mode='light'] #sidebar,
-html[data-mode='light'] #sidebar-panel {
-  outline: 3px dashed yellow !important;
-}
-
-html[data-mode='dark'] #sidebar,
-html[data-mode='dark'] #sidebar-panel {
-  outline: 3px dashed cyan !important;
-}
-*/
-
 /* ==== 3) Change heading fonts ==== */
 
 /* ===============================
