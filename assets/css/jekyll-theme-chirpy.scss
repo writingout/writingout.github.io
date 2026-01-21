@@ -411,3 +411,17 @@ html:not(.dark):not([data-mode='dark']):not([data-theme='dark'])
 #panel-wrapper {
   opacity: 0.92;
 }
+
+/* LIGHT MODE: make the Categories rows stand out (border + subtle lift) */
+html:not(.dark):not([data-mode='dark']):not([data-theme='dark'])
+  #main-wrapper
+  a[href^='/categories/'],
+html:not(.dark):not([data-mode='dark']):not([data-theme='dark'])
+  #main-wrapper
+  a[href^='{{ site.baseurl }}/categories/'] {
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06) !important;
+  background-color: rgba(255, 255, 255, 0.887) !important; /* slight sheen */
+  border-radius: 0.75rem !important;
+  padding: 0.35rem 0.7rem !important;
+}
