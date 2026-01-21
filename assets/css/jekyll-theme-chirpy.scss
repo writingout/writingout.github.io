@@ -153,22 +153,18 @@ html.dark #sidebar {
   color: #f2f2f2 !important;
 }
 
+/* ==== Mobile Topbar Only ==== */
 @media (max-width: 768px) {
-  /* ===== DEFAULT (assume light unless dark) ===== */
+  /* Default - works when no theme is set or light theme */
   #topbar,
   #topbar-wrapper {
-    background-color: rgba(243, 240, 232, 0.95) !important; /* Light beige */
+    background-color: rgba(243, 240, 232, 0.95) !important;
     opacity: 1 !important;
   }
 
-  /* ===== ONLY override for DARK mode ===== */
-  /* Since we know html[data-mode='dark'] works */
-  html[data-mode='dark'] #topbar,
-  html[data-mode='dark'] #topbar-wrapper {
-    background-color: rgba(17, 16, 22, 0.95) !important; /* Dark color */
-  }
-
-  /* Also catch any other dark theme indicators */
+  /* Dark theme - using multiple possible selectors */
+  [data-mode='dark'] #topbar,
+  [data-mode='dark'] #topbar-wrapper,
   [data-theme='dark'] #topbar,
   [data-theme='dark'] #topbar-wrapper,
   .dark #topbar,
