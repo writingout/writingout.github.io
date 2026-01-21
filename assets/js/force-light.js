@@ -10,6 +10,7 @@
   function forceLight() {
     root.setAttribute('data-mode', 'light');
     try {
+      // Chirpy stores theme choice in localStorage
       localStorage.setItem('data-mode', 'light');
       localStorage.setItem('mode', 'light');
       localStorage.removeItem('theme');
@@ -17,13 +18,11 @@
     } catch (e) {}
   }
 
+  // Run immediately
   forceLight();
 
-  const obs = new MutationObserver(() => {
-    if (root.getAttribute('data-mode') === 'dark') {
-      forceLight();
-    }
-  });
-
-  obs.observe(root, { attributes: true, attributeFilter: ['data-mode'] });
+  // If anything tries to flip it back, flip it to light again
+  new MutationObserver(() => {
+    if (root.getAttribute('data-mode') === 'dark') forceLight();
+  }).observe(root, { attributes: true, attributeFilter: ['data-mode'] });
 })();

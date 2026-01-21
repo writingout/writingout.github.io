@@ -187,3 +187,19 @@ i.mode-toggle {
   content: none !important;
   display: none !important;
 }
+
+/* ==== 4) Change heading fonts ==== */
+
+/* ===============================
+   Post titles – Roboto Condensed
+   =============================== */
+
+.post-title,
+.post-title a,
+.card-title,
+h1.post-title,
+article h1,
+article h2 {
+  font-family: 'Roboto Condensed', sans-serif !important;
+  letter-spacing: 0.02em; /* optional, looks good with condensed fonts */
+}
