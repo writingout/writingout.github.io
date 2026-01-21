@@ -152,25 +152,3 @@ html.dark #sidebar {
 .dark #sidebar a {
   color: #f2f2f2 !important;
 }
-
-/* ==== Mobile Topbar Only ==== */
-@media (max-width: 768px) {
-  /* Default - works when no theme is set or light theme */
-  #topbar,
-  #topbar-wrapper {
-    background-color: rgba(243, 240, 232, 0.95) !important;
-    opacity: 1 !important;
-  }
-
-  /* Dark theme - using multiple possible selectors */
-  [data-mode='dark'] #topbar,
-  [data-mode='dark'] #topbar-wrapper,
-  [data-theme='dark'] #topbar,
-  [data-theme='dark'] #topbar-wrapper,
-  .dark #topbar,
-  .dark #topbar-wrapper,
-  body.dark #topbar,
-  body.dark #topbar-wrapper {
-    background-color: rgba(17, 16, 22, 0.95) !important;
-  }
-}
