@@ -356,3 +356,56 @@ html.dark #sidebar .sidebar-bottom svg * {
     width: min(100%, 500px) !important;
   }
 }
+/* =========================================================
+   LIGHT MODE ONLY – beige "paper" cards + readable text
+   Safe version: no Liquid, no fragile multiline selectors
+   ========================================================= */
+
+/* 1) Define a single "light mode" condition:
+   Apply when the page is NOT marked dark.
+   (Chirpy variants use either .dark OR data-mode/theme.) */
+html:not(.dark):not([data-mode='dark']):not([data-theme='dark']),
+body:not(.dark):not([data-mode='dark']):not([data-theme='dark']) {
+  /* --- Beige cards (outer surface) --- */
+  #main-wrapper .card,
+  #post-list .card {
+    background-color: #d7d0c6 !important;
+    overflow: hidden !important; /* ensures inner layers clip to rounded corners */
+  }
+
+  /* Ensure inner layers don't paint square corners */
+  #main-wrapper .card .card-body,
+  #post-list .card .card-body,
+  #main-wrapper .post-preview,
+  #post-list .post-preview {
+    background: transparent !important;
+    background-image: none !important;
+  }
+
+  /* Readability on beige */
+  #main-wrapper .card {
+    color: rgba(0, 0, 0, 0.78) !important;
+  }
+
+  #main-wrapper .card .post-title,
+  #post-list .card .post-title {
+    color: rgba(0, 0, 0, 0.88) !important;
+  }
+
+  /* Optional: slightly calm the right panel */
+  #panel-wrapper {
+    opacity: 0.92;
+  }
+
+  /* 2) Categories page/list: make category rows stand out
+     No baseurl Liquid — just match common /categories/ links. */
+  #main-wrapper a[href^='/categories/'] {
+    display: block; /* makes the highlight cover the whole row */
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06) !important;
+    background-color: rgba(255, 255, 255, 0.88) !important;
+    border-radius: 0.75rem !important;
+    padding: 0.55rem 0.9rem !important; /* more breathing room than before */
+    text-decoration: none;
+  }
+}
