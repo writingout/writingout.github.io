@@ -100,15 +100,15 @@ html[data-mode] {
 
 /* ==== 2) Sidebar colors - UNIVERSAL APPROACH ==== */
 
-/* Default/fallback for when theme hasn't loaded */
+// Default/fallback for when theme hasn't loaded */
 #sidebar {
-  background: #f3f0e8 !important;
+  background: #a9537e !important;
 }
 
 #sidebar .site-title,
 #sidebar .site-subtitle,
 #sidebar a {
-  color: #1a1a1a !important;
+  color: #ffffff !important;
 }
 
 /* When ANY light theme indicator is present */
@@ -117,9 +117,10 @@ html[data-mode] {
 .light #sidebar,
 body.light #sidebar,
 html.light #sidebar {
-  background: #f3f0e8 !important;
+  background: #a9537e !important;
 }
 
+// f3f0e8
 [data-mode='light'] #sidebar .site-title,
 [data-mode='light'] #sidebar .site-subtitle,
 [data-mode='light'] #sidebar a,
@@ -129,7 +130,7 @@ html.light #sidebar {
 .light #sidebar .site-title,
 .light #sidebar .site-subtitle,
 .light #sidebar a {
-  color: #1a1a1a !important;
+  color: #ffffff !important;
 }
 
 /* When ANY dark theme indicator is present */
@@ -138,7 +139,7 @@ html.light #sidebar {
 .dark #sidebar,
 body.dark #sidebar,
 html.dark #sidebar {
-  background: #111016 !important;
+  background: #a9537e !important;
 }
 
 [data-mode='dark'] #sidebar .site-title,
@@ -150,45 +151,10 @@ html.dark #sidebar {
 .dark #sidebar .site-title,
 .dark #sidebar .site-subtitle,
 .dark #sidebar a {
-  color: #f2f2f2 !important;
+  color: #000000 !important;
 }
 
-/* ==== 3) Hide dark/light theme toggle button ==== */
-
-/* Hide theme mode toggle button */
-#mode-toggle,
-.mode-toggle,
-button[aria-label*='mode'],
-button[aria-label*='Mode'],
-i.mode-toggle {
-  display: none !important;
-}
-
-/* ===============================
-   Remove leftover “dot” in sidebar bottom after hiding mode toggle
-   =============================== */
-
-/* 1) If the toggle element still exists but is empty/hidden, remove it */
-#sidebar .sidebar-bottom #mode-toggle,
-#sidebar .sidebar-bottom .mode-toggle {
-  display: none !important;
-}
-
-/* 2) Remove any empty placeholder nodes that still take space and render as a dot */
-#sidebar .sidebar-bottom > *:empty {
-  display: none !important;
-}
-
-/* 3) If the dot is drawn by a pseudo-element on a leftover button */
-#sidebar .sidebar-bottom #mode-toggle::before,
-#sidebar .sidebar-bottom #mode-toggle::after,
-#sidebar .sidebar-bottom .mode-toggle::before,
-#sidebar .sidebar-bottom .mode-toggle::after {
-  content: none !important;
-  display: none !important;
-}
-
-/* ==== 4) Change heading fonts ==== */
+/* ==== 3) Change heading fonts ==== */
 
 /* ===============================
    Post titles – Roboto Condensed
@@ -202,16 +168,4 @@ article h1,
 article h2 {
   font-family: 'Roboto Condensed', sans-serif !important;
   letter-spacing: 0.02em; /* optional, looks good with condensed fonts */
-}
-
-/* Force light palette even if OS prefers dark */
-:root {
-  color-scheme: light;
-  --main-bg: #ffffff !important;
-  --mask-bg: #f1f1f1 !important;
-  --text-color: #34343c !important;
-  --text-muted-color: #757575 !important;
-  --heading-color: #2a2a2a !important;
-  --card-bg: #ffffff !important;
-  --sidebar-bg: #f3f0e8 !important;
 }
