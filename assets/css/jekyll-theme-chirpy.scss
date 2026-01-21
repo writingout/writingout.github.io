@@ -308,7 +308,7 @@ html.dark #sidebar .sidebar-bottom svg * {
   align-items: center !important;
 }
 
-/* ==== 5) PURE COSMETICS, CAN DO WITHOUT; CHANGING SIDEBAR TITLE SIZE ETC ==== */
+/* ==== 5) MORE COSMETICS, CAN DO WITHOUT; CHANGING SIDEBAR TITLE SIZE, POST WIDTH, ETC ==== */
 
 #sidebar .site-title {
   font-size: 2rem;
@@ -336,4 +336,78 @@ html.dark #sidebar .sidebar-bottom svg * {
 
 .post-meta {
   opacity: 0.7;
+}
+
+/*NARROWER POST CARDS*/
+
+/* Desktop only: narrow the post preview cards, keep them left-aligned */
+@media (min-width: 600px) {
+  /* Make the list a column layout we control */
+  #post-list {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important; /* centered! */
+  }
+
+  /* Narrow the actual preview block */
+  #post-list .post-preview,
+  #post-list article,
+  #post-list .card {
+    width: min(100%, 500px) !important;
+  }
+}
+
+/* LIGHT MODE ONLY: beige paper cards + keep Chirpy rounded corners */
+html:not(.dark):not([data-mode='dark']):not([data-theme='dark'])
+  #main-wrapper
+  .card,
+html:not(.dark):not([data-mode='dark']):not([data-theme='dark'])
+  #post-list
+  .card {
+  background-color: #d7d0c6 !important; /* your beige */
+  border-radius: 1rem !important; /* or remove this line to keep theme radius */
+  overflow: hidden !important; /* key: preserve rounded look */
+}
+
+/* LIGHT MODE ONLY: ensure inner layers don’t paint square corners */
+html:not(.dark):not([data-mode='dark']):not([data-theme='dark'])
+  #main-wrapper
+  .card
+  .card-body,
+html:not(.dark):not([data-mode='dark']):not([data-theme='dark'])
+  #post-list
+  .card
+  .card-body,
+html:not(.dark):not([data-mode='dark']):not([data-theme='dark'])
+  #main-wrapper
+  .post-preview,
+html:not(.dark):not([data-mode='dark']):not([data-theme='dark'])
+  #post-list
+  .post-preview {
+  background: transparent !important;
+}
+
+/* Light mode only: improve readability on beige cards */
+html:not(.dark):not([data-mode='dark']):not([data-theme='dark'])
+  #main-wrapper
+  .card,
+html:not(.dark):not([data-mode='dark']):not([data-theme='dark'])
+  #post-list
+  .card {
+  color: rgba(0, 0, 0, 0.78) !important;
+}
+
+html:not(.dark):not([data-mode='dark']):not([data-theme='dark'])
+  #main-wrapper
+  .card
+  .post-title,
+html:not(.dark):not([data-mode='dark']):not([data-theme='dark'])
+  #post-list
+  .card
+  .post-title {
+  color: rgba(0, 0, 0, 0.88) !important;
+}
+
+#panel-wrapper {
+  opacity: 0.92;
 }
