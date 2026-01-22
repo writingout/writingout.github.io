@@ -1,7 +1,7 @@
 ---
 title: "I'm Finding Out Faster and Faster, and I Can't Keep Up"
 data: 2026-01-20 00:00:00 +0000
-categories: [Personal]
+categories: [Psychology]
 tags: [Well-being]
 ---
 
