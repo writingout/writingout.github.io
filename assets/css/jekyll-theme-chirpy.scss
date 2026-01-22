@@ -104,8 +104,10 @@ html[data-mode] {
 
 // Default/fallback for when theme hasn't loaded */
 #sidebar {
-  background: #1a1a2e !important;
+  background: #550a28 !important;
 }
+
+// #1a1a2e
 
 #sidebar .site-title,
 #sidebar .site-subtitle,
@@ -119,7 +121,7 @@ html[data-mode] {
 .light #sidebar,
 body.light #sidebar,
 html.light #sidebar {
-  background: #1a1a2e !important;
+  background: #550a28 !important;
 }
 
 /*756859*/
@@ -144,7 +146,7 @@ html.light #sidebar {
 .dark #sidebar,
 body.dark #sidebar,
 html.dark #sidebar {
-  background: #1a1a2e !important;
+  background: #550a28 !important;
 }
 
 [data-mode='dark'] #sidebar .site-title,

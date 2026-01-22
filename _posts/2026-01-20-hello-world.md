@@ -5,7 +5,7 @@ categories: [Personal]
 tags: [Well-being]
 ---
 
-#### I have a bad habit, formed over countless years, of immediately looking up whatever concerns me. "What is the best sauce to get with a Subway turkey sandwich?" is a highlight of mine that according to my search history, I have recycled multiple times. 
+#### I have a bad habit, formed over countless years, of immediately looking up whatever concerns me. "What is the best sauce to get with a Subway sandwich?" is a highlight of mine that according to my search history, I have recycled multiple times. 
 
 The problem extends however from Subway sauce inquiries to my studies and even soul-searching. It is near-unbearable to come up with a question and not immediately look up a precise internet answer.  
 
